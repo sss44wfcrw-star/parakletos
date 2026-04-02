@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./parakletos.db
+      FRONTEND_ORIGIN: http://127.0.0.1:5500

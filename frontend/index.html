@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PARAKLETOS</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>PARAKLETOS</h1>
+      <p id="statusLine">Booting...</p>
+    </div>
+    <div class="actions">
+      <button id="homeBtn">Home</button>
+      <button id="sandboxBtn">Sandbox</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Volumes</h2>
+      <div id="volumeGrid" class="volume-grid"></div>
+    </aside>
+
+    <section class="content">
+      <div id="homeView" class="panel">
+        <h2>Unified Mirror Node</h2>
+        <p id="healthReadout">Loading backend...</p>
+      </div>
+
+      <div id="viewerView" class="panel hidden">
+        <h2 id="viewerTitle">Select a volume</h2>
+        <pre id="viewerContent"></pre>
+      </div>
+
+      <div id="sandboxView" class="panel hidden">
+        <canvas id="sandboxCanvas"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="./sandbox.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

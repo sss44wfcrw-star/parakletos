@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: parakletos-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: parakletos-db
+          property: connectionString
+      - key: FRONTEND_ORIGIN
+        value: https://parakletos-frontend.onrender.com
+
+  - type: static
+    name: parakletos-frontend
+    rootDir: frontend
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+
+databases:
+  - name: parakletos-db
