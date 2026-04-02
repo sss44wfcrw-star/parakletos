@@ -13,8 +13,9 @@ services:
       - key: FRONTEND_ORIGIN
         value: https://parakletos-frontend.onrender.com
 
-  - type: static
+  - type: web
     name: parakletos-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: ""
     staticPublishPath: .
