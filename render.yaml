@@ -6,10 +6,6 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: postgresql://parakletos_admin:Nzz1JiaREieDsJnB0uydsZWv2zry4I1i@dpg-d75q7gk50q8c73b68620-a.virginia-postgres.render.com/archive_db_djej
-        fromDatabase:
-          name: parakletos-db
-          property: connectionString
       - key: FRONTEND_ORIGIN
         value: https://parakletos-frontend.onrender.com
 
